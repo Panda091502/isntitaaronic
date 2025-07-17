@@ -6,7 +6,7 @@ body {
   color: #fff;
   margin: 0;
   padding: 0;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -15,10 +15,12 @@ body {
 
 .container {
   max-width: 400px;
-  background-color: rgba(80, 0, 120, 0.3); /* from 0.2 → 0.3 */
+  margin: 20px auto;
+  background-color: rgba(80, 0, 120, 0.5);
   border-radius: 20px;
-  padding: 20px;
+  padding: 30px;
   box-shadow: 0 0 12px #8e44ad;
+  text-align: center;
 }
 
 .container,
@@ -214,4 +216,37 @@ input:focus,
 button:focus {
   outline: none;
   box-shadow: 0 0 6px #c299f2;
+}
+
+
+
+.info-box {
+  margin-top: 20px;
+  background-color: rgba(80, 0, 120, 0.2); /* same opacity */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 12px #8e44ad;
+}
+
+.instructions {
+  text-align: left;
+  padding-left: 20px;
+  color: #ffe6ff;
+  margin-top: 10px;
+}
+
+.instructions li {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.love-note {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  font-style: italic;
+  color: #fff5fb;
+  font-size: 15px;
+  text-align: center;
 }
