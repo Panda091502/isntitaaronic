@@ -1,3 +1,6 @@
+const alarmSound = document.getElementById('alarmSound');
+
+
 let timer = null;
 let isRunning = false;
 let mode = 'work';
@@ -185,28 +188,30 @@ function startTimer() {
     if (mode === 'work') {
       if (workTimeLeft > 0) {
         workTimeLeft--;
-        updateDisplay();
       } else {
         clearInterval(timer);
+        isRunning = false;
+        alarmSound.play(); // 🔔 Alarm when work ends
         mode = 'break';
         quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-        updateDisplay();
-        isRunning = false;
+        startTimer();
       }
     } else {
       if (breakTimeLeft > 0) {
         breakTimeLeft--;
-        updateDisplay();
       } else {
         clearInterval(timer);
+        isRunning = false;
+        alarmSound.play(); // 🔔 Alarm when break ends
         mode = 'work';
         quoteBox.textContent = '';
-        updateDisplay();
-        isRunning = false;
+        startTimer();
       }
     }
+    updateDisplay();
   }, 1000);
 }
+
 
 // MODE SWITCH WITHOUT RESET
 document.querySelectorAll('[data-mode]').forEach(btn => {
